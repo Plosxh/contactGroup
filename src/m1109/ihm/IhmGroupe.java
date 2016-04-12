@@ -3,6 +3,8 @@
  */
 package m1109.ihm;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 import m1109.nf.Groupe;
 /**
  *
@@ -13,6 +15,7 @@ public class IhmGroupe extends javax.swing.JPanel {
      * Composants graphiques constituants l'interface
      */
     private IhmLogo ihmLogo;
+    private JTextField nomGroup;
     
     
     /**
@@ -37,6 +40,15 @@ public class IhmGroupe extends javax.swing.JPanel {
                 
         ihmLogo = new IhmLogo();
         this.add(ihmLogo);  
+        
+        //===========================
+        // GESTION NOM GROUPE
+        //===========================
+        JLabel labelGroup = new JLabel("Nom du Groupe : ");
+        this.add(labelGroup);
+
+        nomGroup = new JTextField(30);
+        this.add(nomGroup);
         
         // A Compléter en TP2
     }
