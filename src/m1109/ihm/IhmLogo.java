@@ -45,11 +45,15 @@ public class IhmLogo extends Canvas  {
         g.setColor(Color.white);
         g.fillRect(0, 0, dim.width, dim.height);
         
+        g.setColor(Color.blue);
+        g.drawRect(0, 0, dim.width-1, dim.height-1);
         // Dessine un rectangle avec un liseré bleu
         /** TP 2 : à modifier et compléter **/
         
         // Dessine le polygone en rouge
         /** TP 2 : à modifier et compléter **/
+        g.setColor(Color.red);
+        g.drawPolygon(polygon);
     }
 
     /**
@@ -71,7 +75,9 @@ public class IhmLogo extends Canvas  {
         // Affecte le polyhone à partir du tableau de points logo
         if (logo != null) {           
             /** TP 2 : à modifier et compléter **/
-            
+            for (int i=0; i<logo.length; i++)
+            {polygon.addPoint((int)logo[i].getX(),(int) logo[i].getY());
+             }
             // Redessine le contenu du canvas
             repaint();            
         }
@@ -83,9 +89,14 @@ public class IhmLogo extends Canvas  {
      */
     public Point[] getLogo() {
         Point[] res = null;
-        
+        int[] x =polygon.xpoints;
+        int [] y=polygon.ypoints;
         /** TP 2 : à modifier et compléter **/
-        
+        for(int i=0; i<polygon.npoints; i++)
+        {
+            Point p= new Point(x[i],y[i]);
+            res[i] =p;
+        }
         return res;
     }
         
